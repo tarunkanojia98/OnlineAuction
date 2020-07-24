@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Auction</title>
+</head>
+<body>
+	<h1 align="center">Welcome to AP Auctions.Please enter bid</h1>
+	<form method="get"  onsubmit="return check()" name="card" action="Result.jsp" >
+	<table align="center" cellpadding="10px" >
+		<tr>
+			<td><label>ItemId</label></td>
+			<td><input type="text" name="item_id" id="item_id" pattern="[0-9]+"></td>
+		</tr>
+		<tr>
+			<td><label>Item Name</label></td>
+			<td><input type="text" name="item_name" id="item_name"></td>
+		</tr>
+		<tr>
+			<td><label>Your name</label></td>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<td><label>Your Email Address</label></td>
+			<td><input type="email" name="email" id="email"></td>
+		</tr>
+		<tr>
+			<td><label>Amount Bid</label></td>
+			<td><input type="text" name="bid" id="bid" pattern="[0-9]*" ></td>
+		</tr>
+		<tr>
+			<td><label>Auto increment bid to match others bid?</label></td>
+			<td><input type="checkbox" name="auto_increment" id="auto_increment" value="true"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="submit"></td>
+		</tr>
+	</table>
+	</form>
+	<script type="text/javascript">
+	function check(){
+		var count=0;
+	var id=document.card.item_id.value;
+	var itemname=document.card.item_name.value;
+	var name=document.card.name.value;
+	var email=document.card.email.value;
+	var bid=document.card.bid.value;
+		if(id.length!=0){
+			count++;
+			}
+		
+		else{
+			alert("Id value is amandatory");
+			
+			return false;
+		}
+		if(itemname.length!=0){
+			count++;
+		}
+		else{
+			alert("Item Name value is amandatory");
+			return false;}
+		if(name.length!=0){
+			count++;
+		}
+		else{
+			alert("Item Name value is amandatory");
+			return false;}
+		if(email.length!=0){
+			count++;
+		}
+		else{
+			alert("email value is amandatory");
+			return false;
+		}
+		if(bid.length!=0){
+			count++;
+		}
+		else{
+			alert("Bid value is amandatory");
+			return false;
+		}
+		if(count===4)
+			{
+			return true;
+			}
+		
+	}
+	</script>
+</body>
+</html>
+
+	
+	
+	
